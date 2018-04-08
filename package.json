@@ -1,0 +1,28 @@
+{
+  "name": "twittelm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/andrelas1/twittelm",
+  "author": "andrelas1 <andre.santos0906@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "api": "node api.js",
+    "build": "webpack",
+    "client": "webpack-dev-server --port 8002",
+    "start": "nf start"
+  },
+  "dependencies": {
+    "ace-css": "^1.1.0",
+    "css-loader": "^0.28.11",
+    "elm-webpack-loader": "^4.5.0",
+    "file-loader": "^1.1.11",
+    "font-awesome": "^4.7.0",
+    "foreman": "^2.0.0",
+    "json-server": "^0.12.1",
+    "style-loader": "^0.20.3",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.1.1"
+  }
+}
