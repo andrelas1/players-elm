@@ -6,6 +6,8 @@ import Msgs exposing (Msg)
 import Models exposing (Player)
 import RemoteData exposing (WebData)
 import Routing exposing (playerPath)
+import Constants.Routes exposing (createPlayerPath)
+import Components.Nav exposing (customNav)
 
 
 -- MODEL
@@ -42,7 +44,7 @@ import Routing exposing (playerPath)
 view : WebData (List Player) -> Html Msg
 view response =
     div []
-        [ nav
+        [ customNav False "Players" (Just newPlayerBtn)
         , maybeList response
         ]
 
@@ -63,11 +65,19 @@ maybeList response =
             text (toString error)
 
 
+newPlayerBtn : Html Msg
+newPlayerBtn =
+    div [ class "right p2" ]
+        [ a [ class "btn regular", href createPlayerPath ] [ i [ class "fa fa-plus mr1" ] [] ] ]
+
+
 nav : Html Msg
 nav =
     div [ class "clearfix mb2 white bg-black" ]
-        [ div [ class "left p2" ]
-            [ text "Players" ]
+        [ div [ class "left p2" ] [ text "Players" ]
+        , div
+            [ class "right p2" ]
+            [ a [ class "btn regular", href createPlayerPath ] [ i [ class "fa fa-plus mr1" ] [] ] ]
         ]
 
 

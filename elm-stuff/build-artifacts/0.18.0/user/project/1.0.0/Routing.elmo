@@ -17,7 +17,14 @@ var _user$project$Routing$matchers = _evancz$url_parser$UrlParser$oneOf(
 					_evancz$url_parser$UrlParser$map,
 					_user$project$Models$PlayersRoute,
 					_evancz$url_parser$UrlParser$s('players')),
-				_1: {ctor: '[]'}
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_evancz$url_parser$UrlParser$map,
+						_user$project$Models$NewPlayer,
+						_evancz$url_parser$UrlParser$s('new-player')),
+					_1: {ctor: '[]'}
+				}
 			}
 		}
 	});

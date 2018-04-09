@@ -178,6 +178,77 @@ var _user$project$Players_List$nav = A2(
 				_0: _elm_lang$html$Html$text('Players'),
 				_1: {ctor: '[]'}
 			}),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('right p2'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$a,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('btn regular'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$href(_user$project$Constants_Routes$createPlayerPath),
+								_1: {ctor: '[]'}
+							}
+						},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$i,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('fa fa-plus mr1'),
+									_1: {ctor: '[]'}
+								},
+								{ctor: '[]'}),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		}
+	});
+var _user$project$Players_List$newPlayerBtn = A2(
+	_elm_lang$html$Html$div,
+	{
+		ctor: '::',
+		_0: _elm_lang$html$Html_Attributes$class('right p2'),
+		_1: {ctor: '[]'}
+	},
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_lang$html$Html$a,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('btn regular'),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$href(_user$project$Constants_Routes$createPlayerPath),
+					_1: {ctor: '[]'}
+				}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$i,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('fa fa-plus mr1'),
+						_1: {ctor: '[]'}
+					},
+					{ctor: '[]'}),
+				_1: {ctor: '[]'}
+			}),
 		_1: {ctor: '[]'}
 	});
 var _user$project$Players_List$maybeList = function (response) {
@@ -200,7 +271,11 @@ var _user$project$Players_List$view = function (response) {
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _user$project$Players_List$nav,
+			_0: A3(
+				_user$project$Components_Nav$customNav,
+				false,
+				'Players',
+				_elm_lang$core$Maybe$Just(_user$project$Players_List$newPlayerBtn)),
 			_1: {
 				ctor: '::',
 				_0: _user$project$Players_List$maybeList(response),

@@ -40,6 +40,8 @@ var _user$project$View$page = function (model) {
 			return _user$project$Players_List$view(model.players);
 		case 'PlayerRoute':
 			return A2(_user$project$View$playerEditPage, model, _p2._0);
+		case 'NewPlayer':
+			return _user$project$Players_Create$view;
 		default:
 			return _user$project$View$notFoundView;
 	}

@@ -12,13 +12,13 @@ import Msgs exposing (..)
 view : Player -> Html Msg
 view player =
     div []
-        [ nav player
+        [ nav
         , form player
         ]
 
 
-nav : Player -> Html Msg
-nav player =
+nav : Html Msg
+nav =
     div [ class "clearfix mb2 white bg-black p1" ] [ listBtn ]
 
 

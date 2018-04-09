@@ -3,7 +3,6 @@ module Routing exposing (..)
 import Navigation exposing (Location)
 import Models exposing (PlayerId, Route(..))
 import UrlParser exposing (..)
-import Constants.Routes exposing (playersPath)
 
 
 playerPath : PlayerId -> String
@@ -17,6 +16,7 @@ matchers =
         [ map PlayersRoute top
         , map PlayerRoute (s "player" </> string)
         , map PlayersRoute (s "players")
+        , map NewPlayer (s "new-player")
         ]
 
 

@@ -158,27 +158,25 @@ var _user$project$Players_Edit$form = function (player) {
 			}
 		});
 };
-var _user$project$Players_Edit$nav = function (player) {
-	return A2(
-		_elm_lang$html$Html$div,
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('clearfix mb2 white bg-black p1'),
-			_1: {ctor: '[]'}
-		},
-		{
-			ctor: '::',
-			_0: _user$project$Players_Edit$listBtn,
-			_1: {ctor: '[]'}
-		});
-};
+var _user$project$Players_Edit$nav = A2(
+	_elm_lang$html$Html$div,
+	{
+		ctor: '::',
+		_0: _elm_lang$html$Html_Attributes$class('clearfix mb2 white bg-black p1'),
+		_1: {ctor: '[]'}
+	},
+	{
+		ctor: '::',
+		_0: _user$project$Players_Edit$listBtn,
+		_1: {ctor: '[]'}
+	});
 var _user$project$Players_Edit$view = function (player) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _user$project$Players_Edit$nav(player),
+			_0: _user$project$Players_Edit$nav,
 			_1: {
 				ctor: '::',
 				_0: _user$project$Players_Edit$form(player),
