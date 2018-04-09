@@ -35,4 +35,3 @@ var _user$project$Routing$playerPath = function (id) {
 		'#player',
 		A2(_elm_lang$core$Basics_ops['++'], '/', id));
 };
-var _user$project$Routing$playersPath = '#players';

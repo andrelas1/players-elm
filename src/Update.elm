@@ -5,7 +5,7 @@ import Msgs exposing (Msg)
 import Routing exposing (parseLocation)
 import RemoteData exposing (WebData)
 import List
-import Commands exposing (savePlayerCmd)
+import Commands exposing (savePlayerCmd, createPlayerCmd, fetchPlayers)
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -28,6 +28,18 @@ update msg model =
             ( updatePlayer model player, Cmd.none )
 
         Msgs.OnPlayerSave (Err error) ->
+            ( model, Cmd.none )
+
+        Msgs.NewPlayer player ->
+            ( model, createPlayerCmd player )
+
+        Msgs.OnPlayerCreate (Ok player) ->
+            ( model, fetchPlayers )
+
+        Msgs.OnPlayerCreate (Err error) ->
+            ( model, Cmd.none )
+
+        Msgs.OnPlayerDelete playerId ->
             ( model, Cmd.none )
 
 

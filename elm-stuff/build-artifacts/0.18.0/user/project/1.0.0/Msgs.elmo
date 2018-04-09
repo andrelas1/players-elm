@@ -1,5 +1,14 @@
+var _user$project$Msgs$OnPlayerDelete = function (a) {
+	return {ctor: 'OnPlayerDelete', _0: a};
+};
+var _user$project$Msgs$OnPlayerCreate = function (a) {
+	return {ctor: 'OnPlayerCreate', _0: a};
+};
 var _user$project$Msgs$OnPlayerSave = function (a) {
 	return {ctor: 'OnPlayerSave', _0: a};
+};
+var _user$project$Msgs$NewPlayer = function (a) {
+	return {ctor: 'NewPlayer', _0: a};
 };
 var _user$project$Msgs$ChangeLevel = F2(
 	function (a, b) {

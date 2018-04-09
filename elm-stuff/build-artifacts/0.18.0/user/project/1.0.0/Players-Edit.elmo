@@ -5,7 +5,7 @@ var _user$project$Players_Edit$listBtn = A2(
 		_0: _elm_lang$html$Html_Attributes$class('btn regular'),
 		_1: {
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$href(_user$project$Routing$playersPath),
+			_0: _elm_lang$html$Html_Attributes$href(_user$project$Constants_Routes$playersPath),
 			_1: {ctor: '[]'}
 		}
 	},

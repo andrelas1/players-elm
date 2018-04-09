@@ -5,7 +5,7 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Msgs exposing (Msg)
 import Models exposing (Player)
-import Routing exposing (playersPath)
+import Constants.Routes exposing (playersPath)
 import Msgs exposing (..)
 
 

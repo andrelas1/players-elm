@@ -3,11 +3,7 @@ module Routing exposing (..)
 import Navigation exposing (Location)
 import Models exposing (PlayerId, Route(..))
 import UrlParser exposing (..)
-
-
-playersPath : String
-playersPath =
-    "#players"
+import Constants.Routes exposing (playersPath)
 
 
 playerPath : PlayerId -> String
