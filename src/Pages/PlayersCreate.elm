@@ -1,9 +1,9 @@
-module Players.Create exposing (..)
+module Pages.PlayersCreate exposing (view)
 
 import Html exposing (div, text, a, span, i, input, Html)
 import Html.Attributes exposing (placeholder, type_, class)
 import Components.Nav exposing (customNav)
-import Msgs exposing (Msg)
+import Messages.Msgs as Msgs exposing (Msg)
 
 
 view : Html Msg

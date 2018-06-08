@@ -42,7 +42,7 @@ var _user$project$Commands$createPlayerRequest = function (player) {
 var _user$project$Commands$createPlayerCmd = function (player) {
 	return A2(
 		_elm_lang$http$Http$send,
-		_user$project$Msgs$OnPlayerCreate,
+		_user$project$Models_Msgs$OnPlayerCreate,
 		_user$project$Commands$createPlayerRequest(player));
 };
 var _user$project$Commands$savePlayerRequest = function (player) {
@@ -61,11 +61,11 @@ var _user$project$Commands$savePlayerRequest = function (player) {
 var _user$project$Commands$savePlayerCmd = function (player) {
 	return A2(
 		_elm_lang$http$Http$send,
-		_user$project$Msgs$OnPlayerSave,
+		_user$project$Models_Msgs$OnPlayerSave,
 		_user$project$Commands$savePlayerRequest(player));
 };
 var _user$project$Commands$fetchPlayers = A2(
 	_elm_lang$core$Platform_Cmd$map,
-	_user$project$Msgs$OnFetchPlayers,
+	_user$project$Models_Msgs$OnFetchPlayers,
 	_krisajenkins$remotedata$RemoteData$sendRequest(
 		A2(_elm_lang$http$Http$get, _user$project$Constants_Api$fetchPlayersUrl, _user$project$Constants_Api$playersDecoder)));

@@ -1,7 +1,7 @@
 module Constants.Api exposing (..)
 
 import Json.Decode as Decode
-import Models exposing (Player, PlayerId)
+import Models.Models as Models exposing (Player, PlayerId)
 import Json.Decode.Pipeline exposing (decode, required)
 
 

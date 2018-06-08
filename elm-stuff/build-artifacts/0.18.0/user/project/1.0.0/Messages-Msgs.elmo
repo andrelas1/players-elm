@@ -1,0 +1,29 @@
+var _user$project$Messages_Msgs$OnPasswordChange = function (a) {
+	return {ctor: 'OnPasswordChange', _0: a};
+};
+var _user$project$Messages_Msgs$OnUsernameChange = function (a) {
+	return {ctor: 'OnUsernameChange', _0: a};
+};
+var _user$project$Messages_Msgs$OnLoginSubmit = {ctor: 'OnLoginSubmit'};
+var _user$project$Messages_Msgs$OnPlayerDelete = function (a) {
+	return {ctor: 'OnPlayerDelete', _0: a};
+};
+var _user$project$Messages_Msgs$OnPlayerCreate = function (a) {
+	return {ctor: 'OnPlayerCreate', _0: a};
+};
+var _user$project$Messages_Msgs$OnPlayerSave = function (a) {
+	return {ctor: 'OnPlayerSave', _0: a};
+};
+var _user$project$Messages_Msgs$NewPlayer = function (a) {
+	return {ctor: 'NewPlayer', _0: a};
+};
+var _user$project$Messages_Msgs$ChangeLevel = F2(
+	function (a, b) {
+		return {ctor: 'ChangeLevel', _0: a, _1: b};
+	});
+var _user$project$Messages_Msgs$OnLocationChange = function (a) {
+	return {ctor: 'OnLocationChange', _0: a};
+};
+var _user$project$Messages_Msgs$OnFetchPlayers = function (a) {
+	return {ctor: 'OnFetchPlayers', _0: a};
+};

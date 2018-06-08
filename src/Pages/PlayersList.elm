@@ -1,44 +1,13 @@
-module Players.List exposing (..)
+module Pages.PlayersList exposing (view)
 
 import Html exposing (div, text, table, thead, td, tr, th, Html, tbody, i, a)
 import Html.Attributes exposing (class, href)
-import Msgs exposing (Msg)
-import Models exposing (Player)
+import Messages.Msgs as Msgs exposing (Msg)
+import Models.Models as Models exposing (Player)
 import RemoteData exposing (WebData)
-import Routing exposing (playerPath)
+import Routes.Routing as Routes exposing (playerPath)
 import Constants.Routes exposing (createPlayerPath)
 import Components.Nav exposing (customNav)
-
-
--- MODEL
--- VIEW
---findPlayer : String -> List Player -> Maybe Player
---findPlayer playerId players =
---    List.foldl
---        (\player memo ->
---            case memo of
---                Just _ ->
---                    memo
---                Nothing ->
---                    if playerId == player.id then
---                        Just player
---                    else
---                        Nothing
---        )
---        Nothing
---        players
---playerName : Maybe Player -> String
---playerName player =
---    case player of
---        Just player ->
---            player.name
---        Nothing ->
---            "Not found"
---div []
---    [ find (\player -> player.id == "1") model.players
---        |> playerName
---        |> text
---    ]
 
 
 view : WebData (List Player) -> Html Msg

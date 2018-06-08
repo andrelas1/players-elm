@@ -1,0 +1,22 @@
+var _user$project$Models_Msgs$OnPlayerDelete = function (a) {
+	return {ctor: 'OnPlayerDelete', _0: a};
+};
+var _user$project$Models_Msgs$OnPlayerCreate = function (a) {
+	return {ctor: 'OnPlayerCreate', _0: a};
+};
+var _user$project$Models_Msgs$OnPlayerSave = function (a) {
+	return {ctor: 'OnPlayerSave', _0: a};
+};
+var _user$project$Models_Msgs$NewPlayer = function (a) {
+	return {ctor: 'NewPlayer', _0: a};
+};
+var _user$project$Models_Msgs$ChangeLevel = F2(
+	function (a, b) {
+		return {ctor: 'ChangeLevel', _0: a, _1: b};
+	});
+var _user$project$Models_Msgs$OnLocationChange = function (a) {
+	return {ctor: 'OnLocationChange', _0: a};
+};
+var _user$project$Models_Msgs$OnFetchPlayers = function (a) {
+	return {ctor: 'OnFetchPlayers', _0: a};
+};

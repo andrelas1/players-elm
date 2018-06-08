@@ -1,12 +1,11 @@
-module Players.Edit exposing (..)
+module Pages.PlayersEdit exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
-import Msgs exposing (Msg)
-import Models exposing (Player)
+import Messages.Msgs as Msgs exposing (Msg)
+import Models.Models as Models exposing (Player)
 import Constants.Routes exposing (playersPath)
-import Msgs exposing (..)
 
 
 view : Player -> Html Msg

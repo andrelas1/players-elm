@@ -2,7 +2,7 @@ module Components.Nav exposing (..)
 
 import Html exposing (div, Html, text)
 import Html.Attributes exposing (class)
-import Msgs exposing (Msg)
+import Messages.Msgs as Msgs exposing (Msg)
 import Components.ListBtn exposing (listBtn)
 
 

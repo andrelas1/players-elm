@@ -1,36 +1,43 @@
 {
   "players": [
     {
+      "username": "sally",
       "id": "1",
       "name": "Sally",
       "level": 2
     },
     {
+      "username": "lance",
       "id": "2",
       "name": "Lance",
       "level": 1
     },
     {
+      "username": "aki",
       "id": "3",
       "name": "Aki",
       "level": 3
     },
     {
+      "username": "maria",
       "id": "4",
       "name": "Maria",
       "level": -3
     },
     {
+      "username": "julia",
       "id": "5",
       "name": "Julian",
       "level": 1
     },
     {
+      "username": "jaime",
       "id": "6",
       "name": "Jaime",
       "level": 1
     },
     {
+      "username": "robert",
       "id": "7",
       "name": "Robert",
       "level": 5

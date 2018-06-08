@@ -1,11 +1,14 @@
-module Update exposing (..)
+module App.Update exposing (..)
 
-import Models exposing (Model, Player)
-import Msgs exposing (Msg)
-import Routing exposing (parseLocation)
+import Models.Models as Models exposing (Model, Player)
+import Messages.Msgs as Msgs exposing (Msg)
+import Routes.Routing as Routing exposing (parseLocation)
 import RemoteData exposing (WebData)
 import List
-import Commands exposing (savePlayerCmd, createPlayerCmd, fetchPlayers)
+import App.Commands as Commands exposing (savePlayerCmd, createPlayerCmd, fetchPlayers, loginUser)
+
+
+-- HANDLES THE STATE OF THE APPLICATION
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -41,6 +44,29 @@ update msg model =
 
         Msgs.OnPlayerDelete playerId ->
             ( model, Cmd.none )
+
+        Msgs.OnLoginSubmit ->
+            ( model, loginUser model.user )
+
+        Msgs.OnUsernameChange un ->
+            let
+                outdatedUser =
+                    model.user
+
+                updatedUser =
+                    { outdatedUser | username = un }
+            in
+                ( { model | user = updatedUser }, Cmd.none )
+
+        Msgs.OnPasswordChange pw ->
+            let
+                outdatedUser =
+                    model.user
+
+                updatedUser =
+                    { outdatedUser | password = pw }
+            in
+                ( { model | user = updatedUser }, Cmd.none )
 
 
 updatePlayer : Model -> Player -> Model

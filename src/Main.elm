@@ -1,12 +1,13 @@
 module Main exposing (..)
 
-import Models exposing (Model, initialModel)
-import Msgs exposing (Msg)
-import View exposing (view)
-import Update exposing (update)
-import Commands exposing (fetchPlayers)
+import App.View as View exposing (view)
+import App.Update as Update exposing (update)
+import App.Commands as Commands exposing (fetchPlayers)
+import App.Subscriptions as Subscriptions exposing (subscriptions)
+import Models.Models as Models exposing (Model, initialModel, User)
+import Messages.Msgs as Msgs exposing (Msg)
 import Navigation exposing (Location)
-import Routing
+import Routes.Routing as Routing
 
 
 init : Location -> ( Model, Cmd Msg )
@@ -15,12 +16,15 @@ init location =
         currentRoute =
             Routing.parseLocation location
     in
-        ( initialModel currentRoute, fetchPlayers )
+        ( initialModel currentRoute user, fetchPlayers )
 
 
-subscriptions : Model -> Sub Msg
-subscriptions model =
-    Sub.none
+user : User
+user =
+    { id = ""
+    , username = ""
+    , password = ""
+    }
 
 
 

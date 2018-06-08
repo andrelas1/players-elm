@@ -29,7 +29,7 @@ var _user$project$Update$update = F2(
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{
-							route: _user$project$Routing$parseLocation(_p0._0)
+							route: _user$project$Routes_Routing$parseLocation(_p0._0)
 						}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};

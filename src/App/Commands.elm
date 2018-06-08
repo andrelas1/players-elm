@@ -1,12 +1,13 @@
-module Commands exposing (..)
+module App.Commands exposing (..)
 
 import Http
 import Json.Encode as Encode
-import Msgs exposing (Msg)
-import Models
+import Messages.Msgs as Msgs exposing (Msg)
+import Models.Models as Models
     exposing
         ( PlayerId
         , Player
+        , User
         )
 import RemoteData
 import Constants.Api
@@ -76,3 +77,12 @@ playerEncoder player =
             ]
     in
         Encode.object attributes
+
+
+loginUser : User -> Cmd Msg
+loginUser user =
+    let
+        _ =
+            Debug.log "User" user
+    in
+        Cmd.none

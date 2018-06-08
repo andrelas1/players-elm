@@ -1,0 +1,75 @@
+var _user$project$App_Commands$loginUser = function (user) {
+	var _p0 = A2(_elm_lang$core$Debug$log, 'User', user);
+	return _elm_lang$core$Platform_Cmd$none;
+};
+var _user$project$App_Commands$playerEncoder = function (player) {
+	var attributes = {
+		ctor: '::',
+		_0: {
+			ctor: '_Tuple2',
+			_0: 'id',
+			_1: _elm_lang$core$Json_Encode$string(player.id)
+		},
+		_1: {
+			ctor: '::',
+			_0: {
+				ctor: '_Tuple2',
+				_0: 'name',
+				_1: _elm_lang$core$Json_Encode$string(player.name)
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'level',
+					_1: _elm_lang$core$Json_Encode$int(player.level)
+				},
+				_1: {ctor: '[]'}
+			}
+		}
+	};
+	return _elm_lang$core$Json_Encode$object(attributes);
+};
+var _user$project$App_Commands$createPlayerRequest = function (player) {
+	return _elm_lang$http$Http$request(
+		{
+			body: _elm_lang$http$Http$jsonBody(
+				_user$project$App_Commands$playerEncoder(player)),
+			expect: _elm_lang$http$Http$expectJson(_user$project$Constants_Api$playerDecoder),
+			headers: {ctor: '[]'},
+			method: 'POST',
+			timeout: _elm_lang$core$Maybe$Nothing,
+			url: _user$project$Constants_Api$fetchPlayersUrl,
+			withCredentials: false
+		});
+};
+var _user$project$App_Commands$createPlayerCmd = function (player) {
+	return A2(
+		_elm_lang$http$Http$send,
+		_user$project$Messages_Msgs$OnPlayerCreate,
+		_user$project$App_Commands$createPlayerRequest(player));
+};
+var _user$project$App_Commands$savePlayerRequest = function (player) {
+	return _elm_lang$http$Http$request(
+		{
+			body: _elm_lang$http$Http$jsonBody(
+				_user$project$App_Commands$playerEncoder(player)),
+			expect: _elm_lang$http$Http$expectJson(_user$project$Constants_Api$playerDecoder),
+			headers: {ctor: '[]'},
+			method: 'PATCH',
+			timeout: _elm_lang$core$Maybe$Nothing,
+			url: _user$project$Constants_Api$savePlayerUrl(player.id),
+			withCredentials: false
+		});
+};
+var _user$project$App_Commands$savePlayerCmd = function (player) {
+	return A2(
+		_elm_lang$http$Http$send,
+		_user$project$Messages_Msgs$OnPlayerSave,
+		_user$project$App_Commands$savePlayerRequest(player));
+};
+var _user$project$App_Commands$fetchPlayers = A2(
+	_elm_lang$core$Platform_Cmd$map,
+	_user$project$Messages_Msgs$OnFetchPlayers,
+	_krisajenkins$remotedata$RemoteData$sendRequest(
+		A2(_elm_lang$http$Http$get, _user$project$Constants_Api$fetchPlayersUrl, _user$project$Constants_Api$playersDecoder)));

@@ -9,3 +9,8 @@ playersPath =
 createPlayerPath : String
 createPlayerPath =
     "#new-player"
+
+
+loginPath : String
+loginPath =
+    "#login"

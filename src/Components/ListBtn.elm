@@ -3,7 +3,7 @@ module Components.ListBtn exposing (..)
 import Html exposing (Html, a, i)
 import Html.Attributes exposing (class, href)
 import Constants.Routes exposing (playersPath)
-import Msgs exposing (Msg)
+import Messages.Msgs as Msgs exposing (Msg)
 
 
 listBtn : Html Msg

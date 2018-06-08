@@ -1,0 +1,101 @@
+var _user$project$App_Update$updatePlayer = F2(
+	function (model, updatedPlayer) {
+		var comparableFn = function (currentPlayer) {
+			return _elm_lang$core$Native_Utils.eq(currentPlayer.id, updatedPlayer.id) ? updatedPlayer : currentPlayer;
+		};
+		var updatePlayerList = function (players) {
+			return A2(_elm_lang$core$List$map, comparableFn, players);
+		};
+		var updatedPlayers = A2(_krisajenkins$remotedata$RemoteData$map, updatePlayerList, model.players);
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{players: updatedPlayers});
+	});
+var _user$project$App_Update$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		switch (_p0.ctor) {
+			case 'OnFetchPlayers':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{players: _p0._0}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'OnLocationChange':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							route: _user$project$Routes_Routing$parseLocation(_p0._0)
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'ChangeLevel':
+				var _p1 = _p0._0;
+				var newPlayer = _elm_lang$core$Native_Utils.update(
+					_p1,
+					{level: _p1.level + _p0._1});
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: _user$project$App_Commands$savePlayerCmd(newPlayer)
+				};
+			case 'OnPlayerSave':
+				if (_p0._0.ctor === 'Ok') {
+					return {
+						ctor: '_Tuple2',
+						_0: A2(_user$project$App_Update$updatePlayer, model, _p0._0._0),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				} else {
+					return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+				}
+			case 'NewPlayer':
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: _user$project$App_Commands$createPlayerCmd(_p0._0)
+				};
+			case 'OnPlayerCreate':
+				if (_p0._0.ctor === 'Ok') {
+					return {ctor: '_Tuple2', _0: model, _1: _user$project$App_Commands$fetchPlayers};
+				} else {
+					return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+				}
+			case 'OnPlayerDelete':
+				return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+			case 'OnLoginSubmit':
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: _user$project$App_Commands$loginUser(model.user)
+				};
+			case 'OnUsernameChange':
+				var outdatedUser = model.user;
+				var updatedUser = _elm_lang$core$Native_Utils.update(
+					outdatedUser,
+					{username: _p0._0});
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{user: updatedUser}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			default:
+				var outdatedUser = model.user;
+				var updatedUser = _elm_lang$core$Native_Utils.update(
+					outdatedUser,
+					{password: _p0._0});
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{user: updatedUser}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+		}
+	});

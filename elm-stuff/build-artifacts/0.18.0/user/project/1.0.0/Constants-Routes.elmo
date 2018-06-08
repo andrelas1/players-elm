@@ -1,2 +1,3 @@
+var _user$project$Constants_Routes$loginPath = '#login';
 var _user$project$Constants_Routes$createPlayerPath = '#new-player';
 var _user$project$Constants_Routes$playersPath = '#players';

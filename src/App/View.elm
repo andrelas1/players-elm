@@ -1,11 +1,13 @@
-module View exposing (..)
+module App.View exposing (..)
 
 import Html exposing (Html, text, div)
-import Models exposing (Model, Player, PlayerId)
-import Msgs exposing (Msg)
-import Players.List
-import Players.Edit
-import Players.Create
+import Html.Attributes exposing (class, id)
+import Models.Models as Models exposing (Model, Player, PlayerId)
+import Messages.Msgs as Msgs exposing (Msg)
+import Pages.PlayersList as PlayersListPage
+import Pages.PlayersEdit as PlayersEditPage
+import Pages.PlayersCreate as PlayersCreatePage
+import Pages.Login as Login
 import List
 import RemoteData
 
@@ -26,20 +28,23 @@ playerName player =
 
 view : Model -> Html Msg
 view model =
-    div [] [ page model ]
+    div [ id "app" ] [ page model ]
 
 
 page : Model -> Html Msg
 page model =
     case model.route of
         Models.PlayersRoute ->
-            Players.List.view model.players
+            PlayersListPage.view model.players
 
         Models.PlayerRoute id ->
             playerEditPage model id
 
         Models.NewPlayer ->
-            Players.Create.view
+            PlayersCreatePage.view
+
+        Models.LoginRoute ->
+            Login.view
 
         Models.NotFoundRoute ->
             notFoundView
@@ -63,7 +68,7 @@ playerEditPage model playerId =
             in
                 case maybePlayer of
                     Just player ->
-                        Players.Edit.view player
+                        PlayersEditPage.view player
 
                     Nothing ->
                         notFoundView
